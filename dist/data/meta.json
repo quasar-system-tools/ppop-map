@@ -1,0 +1,13 @@
+{
+  "source": "행정안전부 지방행정 인허가 데이터 · 청소년게임제공업",
+  "url": "https://www.data.go.kr/data/15045069/fileData.do",
+  "downloadUrl": "https://file.localdata.go.kr/file/download/youth_game_providers/info",
+  "fetchedAt": "2026-11-05",
+  "total": 31074,
+  "active": 7067,
+  "mapped": 6719,
+  "candidates": 1941,
+  "missingCoordinates": 348,
+  "crs": "EPSG:5174 → EPSG:4326",
+  "classification": "상호명·제공게임물명 키워드 기반 후보. 인형뽑기 전문점 여부와 실제 영업 여부 미검증."
+}

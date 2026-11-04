@@ -1,0 +1,3 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';
+for(const f of ['index.html','app.js','domain.js','style.css','leaflet.js','leaflet.css','data/stores.json','data/meta.json'])assert.ok(fs.statSync('dist/'+f).size>0,f);
+const stores=JSON.parse(fs.readFileSync('dist/data/stores.json'));const meta=JSON.parse(fs.readFileSync('dist/data/meta.json'));assert.equal(stores.length,meta.mapped);assert.equal(new Set(stores.map(s=>s.id)).size,stores.length);assert.equal(stores.filter(s=>s.candidate).length,meta.candidates);assert.ok(stores.every(s=>s.lat>33&&s.lat<39&&s.lng>124&&s.lng<132));assert.ok(stores.every(s=>!('전화번호' in s)));console.log(`Static build verified: ${stores.length} stores, ${meta.candidates} candidates`);
