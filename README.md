@@ -31,6 +31,6 @@ Node.js 20 이상, Python 3 사용.
 
 Node.js 20.19 이상 또는 22.13 이상이 필요합니다. `npm test`는 계산 로직과 실제 앱 DOM에서 핀·목록 선택, 시트 펼치기, 저장 후 상태 유지, 매장 전환, 폼과 Escape, 손잡이 드래그를 검사합니다.
 
-`.github/workflows/pages.yml`은 main push 시 검사 후 dist를 GitHub Pages로 배포합니다. 저장소 Settings → Pages → Source는 GitHub Actions를 사용합니다. 앱 파일·데이터는 상대 경로라 `/ppop-map/` 하위 경로에서 동작합니다. Pages 주소는 https://quasar-system-tools.github.io/ppop-map/ 입니다.
+`.github/workflows/pages.yml`은 main push 시 앱을 검사합니다. GitHub Actions 실행기 대기 지연에 대비해 Pages는 정적 파일 전용 `gh-pages` 브랜치의 루트(`/`)에서 배포하도록 설정했습니다. 변경 사항을 main에 커밋한 뒤 `npm run deploy`를 실행하면 검사 후 dist만 gh-pages로 푸시합니다. 배포 스크립트는 작업 트리가 깨끗해야 실행되며 강제 푸시는 하지 않습니다. 앱 파일·데이터는 상대 경로라 `/ppop-map/` 하위 경로에서 동작합니다. Pages 주소는 https://quasar-system-tools.github.io/ppop-map/ 입니다.
 
 Pages와 기존 Sites는 서로 다른 출처이므로 브라우저 로컬 기록이 자동으로 이동하지 않습니다. 이전 사이트의 기록이 필요하면 먼저 JSON으로 내보내 보관하세요.
